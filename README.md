@@ -3,10 +3,10 @@
 
 ## Avertissements et recommandations
 
-Ce projet utilise une partie du code provenant du projet du groupe NVIDIA sur le [StyleGAN2 et 3](https://github.com/NVlabs/stylegan3/tree/main) . Veuillez lire attentivement ses conditions d'utilisation. Sa réutilisation est faite dans le present cas, UNIQUEMENT pour la recherche. Veuillez lire la [Licence utilisateur](./LICENSE.TXT) du projet d'origine.
+Ce projet utilise une partie du code provenant du projet du groupe NVIDIA sur le [StyleGAN2 et 3](https://github.com/NVlabs/stylegan3/tree/main) . Veuillez lire attentivement ses conditions d'utilisation. Sa réutilisation est faite dans le present cas, UNIQUEMENT pour la recherche. Veuillez lire la [Licence utilisateur](https://github.com/NVlabs/stylegan3/blob/main/LICENSE.txt) du projet d'origine.
 Pour reimplémenter le présent travail, il faut:
 - cloner le projet original à partir du GitHub officiel du stylegan2 et 3 ci-dessus;
-- remplacer le fichier `networks_stylegan2` original (présent dans le répertoire `training-runs` du [StyleGAN2 et 3](https://github.com/NVlabs/stylegan3/tree/main) ) par celui se trouvant ici;
+- remplacer le fichier `networks_stylegan2` original (présent dans le répertoire `training` du [StyleGAN2 et 3](https://github.com/NVlabs/stylegan3/tree/main) ) par celui se trouvant ici;
 - Ajouter tous les fichiers `.py` de ce repo dans le répertoire principal que vous venez de cloner;
 - Configurer l'environnement à l'aide du fichier `environment.yml` déjà cloné.
 
@@ -24,9 +24,10 @@ Il faut se reférer aux indications du GitHub officiel du StyleGAN3 pour éventu
 `    --gpus=1 --batch=16 --gamma=0.8192 --map-depth=2 --glr=0.0025 --dlr=0.0025\`
 `    --cbase=16384  --kimg=50 --snap=5 --workers=2\`
 `    --resume=https://api.ngc.nvidia.com/v2/models/nvidia/research/stylegan2/versions/1/files/stylegan2-ffhq-256x256.pkl`
-- "data" est le dossier où sont stockées les images précédemment prétraitées;
-- "outdir" est le dossier dans lequel les les poids du modèle seront sauvegardés, durant la phase d'entraînement;
-- "resume" permet de charger les poids du réseau pré-entrainés qu'on a choisi.
+- "train_set" est le dossier où sont stockées les images précédemment prétraitées;
+- "training-runs" est le dossier dans lequel les les poids du modèle seront sauvegardés, durant la phase d'entraînement;
+- "resume" est la variable contenant le lien qui permet de charger les poids du réseau pré-entrainés qu'on a choisi;
+
 
 
 ## Entrainement de l'encodeur
