@@ -55,7 +55,7 @@ L'une des méthodes utilisées pour transformer les données à plusieurs dimens
 
 ## Evaluation du classifieur semi-supervisé.
 
-L'exécution du script `classifier.py` permet d'evaluer le modèle en utilisant comme métriques la précision, le rappel, le score f1. Ce script permet également de tracer les graphiques de comparaison des scores de naevus VS melanomes, les graphiques de matrices de confusion, les rapports de classification ainsi que les A.U.C et les stocke dans un nouveau dossier nommé "graphics".
+L'exécution du script `classifier2.py` permet d'evaluer le modèle en utilisant comme métriques la précision, le rappel, le score f1. Ce script permet également de tracer les graphiques de comparaison des scores de naevus VS melanomes, les graphiques de matrices de confusion, les rapports de classification ainsi que les A.U.C et les stocke dans un nouveau dossier nommé "graphics".
 Il faudra modifier les les noms des fichiers excels contenants vos scores d'anomalie, en fonction des vôtres.
 
 
