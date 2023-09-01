@@ -20,9 +20,9 @@ Il faut se reférer aux indications du GitHub officiel du StyleGAN3 pour éventu
 - "dest" est le dossier dans lequel les images seront stoquées, après la mise en forme et les différentes opérations de prétraitement choisies;
 
 ## Entrainement du styleGAN2-ada par transfert d'apprentissage
-`python train.py --outdir=training-runs --cfg=stylegan2 --data=train_set \n`
-`    --gpus=1 --batch=16 --gamma=0.8192 --map-depth=2 --glr=0.0025 --dlr=0.0025\n`
-`    --cbase=16384  --kimg=50 --snap=5 --workers=2\n`
+`python train.py --outdir=training-runs --cfg=stylegan2 --data=train_set \`
+`    --gpus=1 --batch=16 --gamma=0.8192 --map-depth=2 --glr=0.0025 --dlr=0.0025\`
+`    --cbase=16384  --kimg=50 --snap=5 --workers=2\`
 `    --resume=https://api.ngc.nvidia.com/v2/models/nvidia/research/stylegan2/versions/1/files/stylegan2-ffhq-256x256.pkl`
 - "train_set" est le dossier où sont stockées les images précédemment prétraitées;
 - "training-runs" est le dossier dans lequel les les poids du modèle seront sauvegardés, durant la phase d'entraînement;
@@ -59,12 +59,6 @@ L'une des méthodes utilisées pour transformer les données à plusieurs dimens
 L'exécution du script `classifier2.py` permet d'evaluer le modèle en utilisant comme métriques la précision, le rappel, le score f1. Ce script permet également de tracer les graphiques de comparaison des scores de naevus VS melanomes, les graphiques de matrices de confusion, les rapports de classification ainsi que les A.U.C et les stocke dans un nouveau dossier nommé "graphics".
 Il faudra modifier les les noms des fichiers excels contenants vos scores d'anomalie, en fonction des vôtres.
 
-
-
-
-
-
-
 <a href="./graphics/confMatrix_pd05.png"><img alt="Matrice de confusion distance euclidienne de pyTorch" src="./graphics/confMatrix_pd05"></img></a>
 
 <a href="./graphics/violon_pd05.png"><img alt="graphique en violon distance euclidienne de pyTorch" src="./graphics/violon_pd05"></img></a>
@@ -75,4 +69,4 @@ Il faudra modifier les les noms des fichiers excels contenants vos scores d'anom
 
 
 ### Auteur
-SAmuel Fabrice NCHARE
+Samuel Fabrice NCHARE
