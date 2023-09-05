@@ -320,7 +320,7 @@ fig_a1, ax_1 = plot_classification_report(dataset_euc1n.label, pred1,
                     save_fig_path = graphic_dir + "/report_euc1.png")
 
 #plot and save roc curve
-plot_roc_curve(y_true=dataset_euc1n.label, val_pred=value1, prc_name='/roc_mse1.png')
+plot_roc_curve(y_true=dataset_euc1n.label, val_pred=value1, prc_name='/roc_euc1.png')
 
 
 # #---------------------------------------------------------------------------------------------------------
