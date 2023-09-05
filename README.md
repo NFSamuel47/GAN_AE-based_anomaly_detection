@@ -65,7 +65,7 @@ Il faudra modifier les noms des fichiers excels contenants les scores d'anomalie
 
 <a href="./graphics/roc_pd05.png"><img alt="AUC distance euclidienne de pyTorch" src="./graphics/roc_pd05.png"></img></a>
 
-<a href="./graphics/report_pd05.png"><img alt="rapport de classification distance euclidienne de pyTorch" src="./graphics/repport_pd05.png"></img></a>
+<a href="./graphics/report_pd05.png"><img alt="rapport de classification distance euclidienne de pyTorch" src="./graphics/report_pd05.png"></img></a>
 
 
 ### Auteur
