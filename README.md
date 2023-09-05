@@ -13,11 +13,11 @@ Pour reimplémenter le présent travail, il faut:
 
 ## Préparation des données.
 
-Il faut se reférer aux indications du GitHub officiel du StyleGAN3 pour éventuelles adaptation. Dans le cadre de ce projet, les données ont été mises en forme à l'aide du script ci-dessous, que vous exécutez dans votre IDE:
+Il faut se reférer aux indications du GitHub officiel du StyleGAN3 pour d'éventuelles adaptations. Dans le cadre de ce projet, les données ont été mises en forme à l'aide du script ci-dessous, que vous exécutez dans votre IDE:
 `python dataset_tool.py --source=dataset/train_set/NEV --dest=trainset \`
 `    --transform=center-crop --resolution='256x256`
 - "source" est le dossier où sont stockées les images brutes;
-- "dest" est le dossier dans lequel les images seront stoquées, après la mise en forme et les différentes opérations de prétraitement choisies;
+- "dest" est le dossier dans lequel les images seront stockées, après la mise en forme et les différentes opérations de prétraitement choisies;
 
 ## Entrainement du styleGAN2-ada par transfert d'apprentissage
 `python train.py --outdir=training-runs --cfg=stylegan2 --data=train_set \`
@@ -25,7 +25,7 @@ Il faut se reférer aux indications du GitHub officiel du StyleGAN3 pour éventu
 `    --cbase=16384  --kimg=50 --snap=5 --workers=2\`
 `    --resume=https://api.ngc.nvidia.com/v2/models/nvidia/research/stylegan2/versions/1/files/stylegan2-ffhq-256x256.pkl`
 - "train_set" est le dossier où sont stockées les images précédemment prétraitées;
-- "training-runs" est le dossier dans lequel les les poids du modèle seront sauvegardés, durant la phase d'entraînement;
+- "training-runs" est le dossier dans lequel les poids du modèle seront sauvegardés, durant la phase d'entraînement;
 - "resume" est la variable contenant le lien qui permet de charger les poids du réseau pré-entrainés qu'on a choisi;
 
 
@@ -39,7 +39,7 @@ Vous pouvez également modifier le nombre d'itérations, ainsi que la fréquence
 
 ## Reconstruction d'images'
 
-le fichier `generate_pic.py` permet de générer les images à partir d'un dossier spécifié. Chaque image sera reconstruite après passage à travers l'encodeur et le générateur du GAN.
+le fichier `generate_pic.py` permet de générer les images à partir d'un dossier spécifié. Chaque image sera reconstruite après passage à travers l'encodeur, ensuite le générateur du styleGAN2.
 Les images reconstruites seront sauvegardées dans un nouveau dossier appelé `generated_img` , chacune ayant le nom de l'image d'origine.
 
 ## Calcul des scores d'anomalies
@@ -57,16 +57,20 @@ L'une des méthodes utilisées pour transformer les données à plusieurs dimens
 ## Evaluation du classifieur semi-supervisé.
 
 L'exécution du script `classifier2.py` permet d'evaluer le modèle en utilisant comme métriques la précision, le rappel, le score f1. Ce script permet également de tracer les graphiques de comparaison des scores de naevus VS melanomes, les graphiques de matrices de confusion, les rapports de classification ainsi que les A.U.C et les stocke dans un nouveau dossier nommé "graphics".
-Il faudra modifier les les noms des fichiers excels contenants vos scores d'anomalie, en fonction des vôtres.
+Il faudra modifier les noms des fichiers excels contenants les scores d'anomalie, en fonction des vôtres.
 
-<a href="./graphics/confMatrix_pd05.png"><img alt="Matrice de confusion distance euclidienne de pyTorch" src="./graphics/confMatrix_pd05"></img></a>
+<a href="./graphics/confMatrix_pd05.png"><img alt="Matrice de confusion distance euclidienne de pyTorch" src="./graphics/confMatrix_pd05.png"></img></a>
 
-<a href="./graphics/violon_pd05.png"><img alt="graphique en violon distance euclidienne de pyTorch" src="./graphics/violon_pd05"></img></a>
+<a href="./graphics/violon_pd05.png"><img alt="graphique en violon distance euclidienne de pyTorch" src="./graphics/violon_pd05.png"></img></a>
 
-<a href="./graphics/roc_pd05.png"><img alt="AUC distance euclidienne de pyTorch" src="./graphics/roc_pd05"></img></a>
+<a href="./graphics/roc_pd05.png"><img alt="AUC distance euclidienne de pyTorch" src="./graphics/roc_pd05.png"></img></a>
 
-<a href="./graphics/report_pd05.png"><img alt="rapport de classification distance euclidienne de pyTorch" src="./graphics/repport_pd05"></img></a>
+<a href="./graphics/report_pd05.png"><img alt="rapport de classification distance euclidienne de pyTorch" src="./graphics/repport_pd05.png"></img></a>
 
 
 ### Auteur
 Samuel Fabrice NCHARE
+
+### Remerciements
+Je remercie Dr. Arthur Cartel FOAHOM GOUABOU et Dr. Rabah IGUERNAISSI, pour leur expertise et leurs conseils, du L.I.S, membres de l'équipe Image et modèles;
+Je remercie également AMIDEX pour le financement.
