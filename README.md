@@ -67,7 +67,16 @@ Il faudra modifier les noms des fichiers excels contenants les scores d'anomalie
 
 <a href="./graphics/report_pd05.png"><img alt="rapport de classification distance euclidienne de pyTorch" src="./graphics/report_pd05.png"></img></a>
 
+## Analyses statistiques
+L'exécution du fichier `score_torchpd.R` permet de comparer les scores moyens de naevus à ceux des mélanomes. Ce fichier a été exécuté dans Rstudio,
+à condition d'installer la bibliothèque R2jags. Cette bibliothèque permet d'implémenter le MCMC dans des modèles statistiques bayésiens. Au terme de l'exécution de ce script à partir des données contenus dans des fichiers excel où la colone score contient les scores d'anomalies et la colonne label contient les classes associées,
+on obtient deux graphiques:
 
+<a href="./nvVSmel.png"><img alt="comparison between naevus and melanoma mean scores" src="./nvVSmel.png"></img></a>
+
+La figure ci-dessous montre que le modèle a bien convergé
+
+<a href="./convergence.png"><img alt="comparison between naevus and melanoma mean scores" src="./convergence.png"></img></a>
 ### Auteur
 Samuel Fabrice NCHARE
 
