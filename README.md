@@ -72,7 +72,7 @@ L'exécution du fichier `score_torchpd.R` permet de comparer les scores moyens d
 à condition d'installer la bibliothèque R2jags. Cette bibliothèque permet d'implémenter le MCMC dans des modèles statistiques bayésiens. Au terme de l'exécution de ce script à partir des données contenus dans des fichiers excel où la colone score contient les scores d'anomalies et la colonne label contient les classes associées,
 on obtient deux graphiques:
 
-<a href="./nvVSmel.png"><img alt="comparison between naevus and melanoma mean scores" src="./nvVSmel.png.png"></img></a>
+<a href="./nvVSmel.png"><img alt="comparison between naevus and melanoma mean scores" src="./nvVSmel.png"></img></a>
 
 La figure ci-dessous montre que le modèle a bien convergé
 
